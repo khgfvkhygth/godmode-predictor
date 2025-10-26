@@ -1,0 +1,13 @@
+
+---
+
+# ?? 7. `.streamlit/config.toml` (Custom UI colors)
+
+> Make sure to create the `.streamlit/` folder
+
+```toml
+[theme]
+primaryColor = "#FF4B4B"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#FAFAFA"
