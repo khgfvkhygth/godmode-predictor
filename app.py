@@ -1,4 +1,3 @@
-import xgboost as xgb
 import streamlit as st
 import pandas as pd
 from ai_engine import load_model, predict_next
