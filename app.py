@@ -4,7 +4,7 @@ from ai_engine import load_model, predict_next
 from live_feed import get_latest_data
 
 st.set_page_config(page_title="GodMode AI Predictor", layout="wide")
-st.title("?? GodMode v3 – Live AI Crash Predictor")
+st.title("?? GodMode v3 - Live AI Crash Predictor")
 
 model = load_model()
 latest_data = get_latest_data()
@@ -17,9 +17,9 @@ if latest_data:
     st.metric("? Confidence", f"{confidence:.1f}%")
     
     if prediction and confidence >= 70:
-        st.success("?? Spike likely – High Confidence Zone!")
+        st.success("?? Spike likely - High Confidence Zone!")
     elif confidence < 50:
-        st.warning("?? Low confidence – Risky zone detected.")
+        st.warning("?? Low confidence - Risky zone detected.")
 
     try:
         df = pd.read_csv("prediction_log.csv")
