@@ -1,4 +1,7 @@
-import xgboost as xgb
+try:
+    import xgboost as xgb
+except ImportError:
+    raise RuntimeError("❌ xgboost is not installed. Please install it via requirements.txt")
 import pandas as pd
 import os
 
@@ -25,7 +28,10 @@ def predict_next(data, model):
     features = pd.DataFrame([feature_dict])[FEATURE_NAMES]
 
     # Use predict_proba; if the model doesn't support it this will raise AttributeError
-    prob = model.predict_proba(features)[0][1]
+    proba = model.predict_proba(features)
+    if proba.shape[1] < 2:
+        raise RuntimeError("Model output is not binary classification.")
+    prob = proba[0][1]
 
     # Return boolean decision and confidence as a percentage
     return prob > 0.7, prob * 100
