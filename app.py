@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from ai_engine import load_model, predict_next
 from live_feed import get_latest_data
+import xgboost as xgb
 
 st.set_page_config(page_title="GodMode AI Predictor", layout="wide")
 st.title("?? GodMode v3 - Live AI Crash Predictor")
