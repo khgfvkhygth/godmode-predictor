@@ -1,5 +1,8 @@
 import pandas as pd
-import xgboost as xgb
+try:
+    import xgboost as xgb
+except ImportError:
+    raise RuntimeError("❌ xgboost is not installed. Please install it via requirements.txt")
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
@@ -79,3 +82,7 @@ def retrain_model(input_csv="multiplier_log.csv"):
 if __name__ == "__main__":
     retrain_model()
 
+
+
+if __name__ == '__main__':
+    train_model()
