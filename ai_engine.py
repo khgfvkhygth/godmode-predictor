@@ -1,7 +1,5 @@
-try:
-    import xgboost as xgb
-except ImportError:
-    raise RuntimeError("❌ xgboost is not installed. Please install it via requirements.txt")
+
+import xgboost
 import pandas as pd
 import os
 
